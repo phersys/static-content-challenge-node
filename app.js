@@ -7,10 +7,10 @@ var fs 		 = require("fs");
 app.get('/about-page', function(req,res) {
 	// read md file using built in fs 'readFileSync method'
 	var str = fs.readFileSync("./content/about-page/index.md", "utf8");
-	// convert file content into html using markdown-js 'makeHtml method'
+	// convert file's content into html using markdown-js 'makeHtml method'
 	var result = markdown.makeHtml(str);
 	// render converted md file
-	res.send(result);
+	res.status(200).send(result);
 })
 
 // set up server
