@@ -3,6 +3,11 @@ var app 	 = express();
 var markdown = require("markdown-js");
 var fs 		 = require("fs");
 
+// better show some content at 'root route'
+app.get('/', function(req, res) {
+    res.redirect('/about-page');
+});
+
 // about-page route
 app.get('/about-page', function(req,res) {
 	// read md file using built in fs 'readFileSync method'
@@ -27,7 +32,7 @@ app.get('/valves', function(req,res) {
 	res.status(200).send(result);
 })
 
-// any other routes will be invalid 
+// any other routes will be invalid (except root route '/')
 // 404 status code is sent 
 app.get('*', function(req,res) {
 	res.status(404).send("<img src='https://http.cat/404'>");
