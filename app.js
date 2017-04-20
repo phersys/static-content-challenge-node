@@ -13,6 +13,20 @@ app.get('/about-page', function(req,res) {
 	res.status(200).send(result);
 })
 
+// jobs route
+app.get('/jobs', function(req,res) {
+	var str = fs.readFileSync("./content/jobs/index.md", "utf8");
+	var result = markdown.makeHtml(str);
+	res.status(200).send(result);
+})
+
+// valves route
+app.get('/valves', function(req,res) {
+	var str = fs.readFileSync("./content/valves/index.md", "utf8");
+	var result = markdown.makeHtml(str);
+	res.status(200).send(result);
+})
+
 // set up server
 app.listen(3000, function() {
 	console.log("listening to PORT 3000");
