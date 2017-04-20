@@ -27,7 +27,13 @@ app.get('/valves', function(req,res) {
 	res.status(200).send(result);
 })
 
+// any other routes will be invalid 
+// 404 status code is sent 
+app.get('*', function(req,res) {
+	res.status(404).send("<img src='https://http.cat/404'>");
+})
+
 // set up server
 app.listen(3000, function() {
-	console.log("listening to PORT 3000");
+	console.log("listening to PORT 3000!");
 })
