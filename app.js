@@ -1,11 +1,16 @@
-// require express 
 var express  = require('express');
-// invoke express
 var app 	 = express();
+var markdown = require("markdown-js");
+var fs 		 = require("fs");
 
-// testing
-app.get('/', function(req,res) {
-	res.send('<h1>hello world</h1>')
+// about-page route
+app.get('/about-page', function(req,res) {
+	// read md file using built in fs 'readFileSync method'
+	var str = fs.readFileSync("./content/about-page/index.md", "utf8");
+	// convert file content into html using markdown-js 'makeHtml method'
+	var result = markdown.makeHtml(str);
+	// render converted md file
+	res.send(result);
 })
 
 // set up server
