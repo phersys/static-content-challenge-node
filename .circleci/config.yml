@@ -43,7 +43,6 @@ workflows:
           no-output-timeout: 20m
           path: ../
           platform: linux/amd64
-          profile-name: myProfileName
           public-registry: false
           push-image: true
           registry-id: AWS_ECR_REGISTRY_ID
@@ -53,5 +52,4 @@ workflows:
           role-arn: 'arn:aws:iam::102674001957:role/root'
           set-repo-policy: false
           skip-when-tags-exist: false
-          source-profile: sourceProfileName
           tag: 'latest,myECRRepoTag'
