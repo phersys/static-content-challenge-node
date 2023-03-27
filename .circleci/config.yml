@@ -33,6 +33,6 @@ workflows:
       - aws-ecr/build-and-push-image: # Use the pre-defined `build-and-push-image` job
           dockerfile: Dockerfile
           path: ../
-          profile-name: 
+          profile-name: profiledemo
           repo: ecr_repository
           tag: latest # default - latest
