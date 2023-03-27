@@ -2,6 +2,18 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+orbs:
+  aws-ecr: circleci/aws-ecr@x.y.z # Use the AWS ECR orb in your configuration
+
+workflows:
+  build_and_push_image:
+    jobs:
+      - aws-ecr/build-and-push-image: # Use the pre-defined `build-and-push-image` job
+          dockerfile: Dockerfile
+          path: ../
+          profile-name: 
+          repo: 102674001957.dkr.ecr.us-east-1.amazonaws.com/ecr_repository
+          tag: latest # default - latest
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
