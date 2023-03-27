@@ -52,4 +52,4 @@ workflows:
           role-arn: 'arn:aws:iam::102674001957:role/ecr'
           set-repo-policy: false
           skip-when-tags-exist: false
-          tag: 'latest,myECRRepoTag'
+          tag: 'latest'
