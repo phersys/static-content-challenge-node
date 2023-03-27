@@ -49,7 +49,7 @@ workflows:
           repo: ecr_repository
           repo-policy-path: repo-policy.json
           repo-scan-on-push: false
-          role-arn: 'arn:aws:iam::102674001957:role/root'
+          role-arn: 'arn:aws:iam::102674001957:role/ecr'
           set-repo-policy: false
           skip-when-tags-exist: false
           tag: 'latest,myECRRepoTag'
