@@ -34,5 +34,5 @@ workflows:
           dockerfile: Dockerfile
           path: ../
           profile-name: 
-          repo: 102674001957.dkr.ecr.us-east-1.amazonaws.com/ecr_repository
+          repo: ecr_repository
           tag: latest # default - latest
