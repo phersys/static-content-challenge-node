@@ -41,7 +41,7 @@ workflows:
           extra-build-args: '--compress'
           new-profile-name: newProfileName
           no-output-timeout: 20m
-          path: ../
+          path: .
           platform: linux/amd64
           public-registry: false
           push-image: true
